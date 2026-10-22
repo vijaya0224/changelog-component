@@ -1,0 +1,234 @@
+/* =========================
+   General Styles
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background-color: #fff;
+}
+
+/* =========================
+   Main Changelog Container
+========================= */
+
+.changelog {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 95vh;
+    margin: 0 auto;
+    padding: 70px 40px 55px;
+    border: 2px solid #222;
+    border-radius: 45px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.changelog-header {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.changelog-header h1 {
+    margin: 0 0 20px;
+    font-size: 56px;
+    font-weight: 400;
+}
+
+.changelog-header p {
+    margin: 0;
+    color: #999;
+    font-size: 23px;
+}
+
+/* =========================
+   Timeline Layout
+========================= */
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 55px;
+}
+
+/* Vertical timeline line */
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 34%;
+    width: 2px;
+    background-color: #222;
+}
+
+/* Each timeline item */
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 34% 1fr;
+    position: relative;
+    min-height: 88px;
+    align-items: center;
+}
+
+/* Date on the left */
+
+.timeline-item time {
+    grid-column: 1;
+    text-align: right;
+    padding-right: 35px;
+    color: #999;
+    font-size: 19px;
+}
+
+/* Timeline dot */
+
+.timeline-dot {
+    position: absolute;
+    left: 34%;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    background-color: #222;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Update title on the right */
+
+.timeline-content {
+    grid-column: 2;
+    padding-left: 35px;
+}
+
+.timeline-content h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* =========================
+   Bottom Button
+========================= */
+
+.changelog-footer {
+    text-align: center;
+}
+
+.changelog-footer a {
+    display: inline-block;
+    padding: 17px 35px;
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.changelog-footer a:hover {
+    background-color: #444;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .changelog {
+        min-height: auto;
+        padding: 40px 20px;
+        border-radius: 30px;
+    }
+
+    .changelog-header {
+        margin-bottom: 45px;
+    }
+
+    .changelog-header h1 {
+        font-size: 40px;
+    }
+
+    .changelog-header p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .timeline {
+        margin-bottom: 40px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        padding: 0 0 25px 35px;
+        min-height: 95px;
+        align-items: start;
+    }
+
+    .timeline-item time {
+        grid-column: 1;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .timeline-dot {
+        left: 10px;
+        top: 7px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .timeline-content {
+        grid-column: 1;
+        padding: 0;
+    }
+
+    .timeline-content h2 {
+        font-size: 17px;
+    }
+
+    .changelog-footer a {
+        padding: 14px 22px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .changelog {
+        padding: 30px 15px;
+    }
+
+    .changelog-header h1 {
+        font-size: 34px;
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+    }
+
+    .timeline-content h2 {
+        font-size: 16px;
+    }
+}
